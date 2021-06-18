@@ -11,7 +11,7 @@ public class GoToNewPlace : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Player")
+        if (collision.gameObject.tag.Equals("Player"))
         {
             FindObjectOfType<PlayerController>().nextPlaceName = goToPlaceName; //Indica que el nombre de la variable nextPlaceName del player controller es el de goToPlaceName de este script que se indica en el editor
             SceneManager.LoadScene(newPlaceName); //Carga la escena que se indique en el editor
