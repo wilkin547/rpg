@@ -172,6 +172,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageToDo: 10
+  damageNumber: {fileID: 5834002912871995730, guid: 5f6e1d41f9071be43bf18f571afdfdfb,
+    type: 3}
 --- !u!114 &6343757935331673250
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -186,3 +188,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 20
   currentHealth: 0
+  flashActive: 0
+  flashDuration: 0
+  expToGive: 10

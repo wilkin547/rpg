@@ -16,6 +16,8 @@ public class PlayerDamage : MonoBehaviour
 
     public int damageToDo = 10;
 
+    public GameObject damageNumber;
+
     /*
     //Comentado porque se modifico el OnCollisionEnter2D, para ejecutar el DamageCharacter del HealthManager
 
@@ -48,6 +50,10 @@ public class PlayerDamage : MonoBehaviour
             */
 
             collision.gameObject.GetComponent<HealthManager>().DamageCharacter(damageToDo); //Hace daño al player cuando choca con el
+
+            //Muestra el daño del enemigo al player, usa el mismo codigo que en WeaponDamage cuando el player hace daño añ enemigo
+            var clone = Instantiate(damageNumber, collision.gameObject.transform.position, Quaternion.Euler(Vector3.zero));
+            clone.GetComponent<DamageNumber>().damagePoints = damageToDo;
         }
     }
 }
