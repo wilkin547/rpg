@@ -57,3 +57,6 @@ TagManager:
   - name: UI
     uniqueID: 2481111475
     locked: 0
+  - name: NPC
+    uniqueID: 1552263231
+    locked: 0

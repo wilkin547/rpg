@@ -8,8 +8,10 @@ public class UIManager : MonoBehaviour
 {
     public Slider playerHealthBar;
     public Text playerHealthBarText;
+    public Text playerLevelText;
 
     public HealthManager playerHealthManager;
+    public CharacterStats playerStats;
     
     void Update()
     {
@@ -23,5 +25,8 @@ public class UIManager : MonoBehaviour
         barTextConstruction.Append("/");
         barTextConstruction.Append(playerHealthManager.maxHealth);
         playerHealthBarText.text = barTextConstruction.ToString(); //Indica que el texto que se construya sera el que aparecera en la barra de vida del player
+
+        //Muestra en la UI el nivel y experiencia del player
+        playerLevelText.text = "Level: " + playerStats.currentLevel + " (Exp: " + playerStats.currentExp + ")";
     }
 }

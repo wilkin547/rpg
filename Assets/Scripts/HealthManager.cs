@@ -71,7 +71,7 @@ public class HealthManager : MonoBehaviour
         }
     }
 
-    public void UpdateMaxHealth(int newMaxHealth) //Funcion que actualiza la cantidad de vida maxima recibiendo como parametro la cantidad que va a ser, esto cuando se suba de nivel
+    public void UpdateMaxHealth(int newMaxHealth) //Funcion que actualiza la cantidad de vida maxima recibiendo como parametro la cantidad que va a ser, y restaurando toda la vida, esto cuando se suba de nivel
     {
         maxHealth = newMaxHealth; //La vida maxima tendra el valor de la nueva vida maxima
         currentHealth = maxHealth; //Y la vida actual tendra el valor de la vida maxima
