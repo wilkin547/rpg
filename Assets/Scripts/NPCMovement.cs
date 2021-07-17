@@ -7,7 +7,7 @@ public class NPCMovement : MonoBehaviour
     public float speed = 1.5f;
     private Rigidbody2D npcRigidBody;
 
-    public bool isWalking;
+    public bool isWalking, isTalking;
 
     public float walkTime = 1.5f;
     private float walkCounter;
@@ -28,8 +28,11 @@ public class NPCMovement : MonoBehaviour
 
     public BoxCollider2D villagerZone; //Referencia en el editor el area en la que se movera el npc
 
+    private DialogManager dialogManager; //Variable para referenciar el dialog manager
+
     void Start()
     {
+        dialogManager = FindObjectOfType<DialogManager>();
         npcRigidBody = GetComponent<Rigidbody2D>();
         walkCounter = walkTime;
         stopCounter = stopTime;
@@ -37,6 +40,18 @@ public class NPCMovement : MonoBehaviour
     
     void Update()
     {
+        //Si dialogActive es false, isTalking vuelve a ser false para que el npc siga caminando
+        if (!dialogManager.dialogActive)
+        {
+            isTalking = false;
+        }
+
+        if (isTalking) //Si el npc esta hablando(se indica desde el NPCDialog)...
+        {
+            StopWalking(); //Se detendra
+            return; //Y lo demas despues de este if no se ejecutara hasta que isTalkign sea false, lo cual se hace checando en el dialog manager si dialogActive es false
+        }
+
         if (isWalking) //Si isWalking es verdadero, es por que la funcion StartWalking y sus parametros esta activa, y con ellos...
         {
             if (villagerZone != null) //Si villagerZone es diferente de null, o sea, que si tiene un game object referenciado

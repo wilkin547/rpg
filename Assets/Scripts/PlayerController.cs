@@ -27,6 +27,8 @@ public class PlayerController : MonoBehaviour
     public float attackTime;
     private float attackTimeCounter;
 
+    public bool playerTalking; //Booleano para indicar si el player esta hablando o no
+
     void Start()
     {
         animator = GetComponent<Animator>(); //Obtencion del animator del player
@@ -41,11 +43,20 @@ public class PlayerController : MonoBehaviour
         {
             Destroy(gameObject); //... destruira cualquier otro que se cree despues
         }
+
+        playerTalking = false; //Al inicio del juego es false porque no esta hablando con nadie
     }
     
     void Update()
     {
         //Formula del movimiento: s = v * t; espacio a moverse = velocidad * tiempo
+
+        //Si el player esta hablando, se detendra y lo demas del codigo no se ejecutara mientras playerTalking sea true
+        if (playerTalking)
+        {
+            playerRigidBody.velocity = Vector2.zero;
+            return;
+        }
 
         walking = false; //Walking es false todo el timepo, a menos que se detecte movimiento
 

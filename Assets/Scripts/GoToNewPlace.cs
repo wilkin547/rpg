@@ -5,9 +5,9 @@ using UnityEngine.SceneManagement; //Libreria para poder cambiar entre escenas
 
 public class GoToNewPlace : MonoBehaviour
 {
-    public string newPlaceName;
+    public string newPlaceName; //Nombre de la escena a cargar al entrar en la change zone
 
-    public string goToPlaceName; //Nombre del lugar al que va a ir al entrar en la change zone
+    public string goToPlaceName; //Nombre del spawn zone del lugar al que va a ir al entrar en la change zone
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
