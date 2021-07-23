@@ -5,9 +5,11 @@ using UnityEngine;
 public class QuestManager : MonoBehaviour
 {
     public Quest[] quests; //Array de quest a hacer
-    public bool[] questsCompleted; //Quests completados
+    public bool[] questsCompleted; //Array de quests completados, lo cual se indicara con true o false en cada uno
 
     private DialogManager dialogManager;
+
+    public string itemCollected; //Variable donde se guardara el nombre del item de la quest que lo requiera
 
     void Start()
     {
@@ -23,6 +25,6 @@ public class QuestManager : MonoBehaviour
             questText
         };
 
-        dialogManager.ShowDialog(dialogLine); //El parametro que pide ShowDialog es un array de strings, pero el texto del quest es de un solo string, asi que para que funcione lo que se hace es conviertir el texto del quest en un array de un unico string(dialogLines), todo esto porque generalmente el texto al iniciar un quest no es de tantas lineas
+        dialogManager.ShowDialog(dialogLine); //El parametro que pide ShowDialog es un array de strings, pero el texto del quest es de un solo string, asi que para que funcione lo que se hace es conviertir el texto del quest en un array de un unico string(dialogLines), todo esto porque generalmente el texto al iniciar un quest no tiene tantas lineas
     }
 }

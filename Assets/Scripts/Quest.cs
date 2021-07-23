@@ -7,12 +7,29 @@ public class Quest : MonoBehaviour
     public int questID;
     private QuestManager questManager;
 
-    public string startText, completedText; //Textos a mostrar al iniciar y al completar el quest    
+    public string startText, completedText; //Textos a mostrar al iniciar y al completar el quest
+
+    public bool needsItem; //Booleano con el que se indicara si el quest necesita un item para completarse
+    public string itemNeededName; //Nombre del item que se necita, debe ser igual al itemName en el script QuestItem
+
+    void Start()
+    {
+        //questManager = FindObjectOfType<QuestManager>();
+    }
+
+    void Update()
+    {
+        if (needsItem && questManager.itemCollected.Equals(itemNeededName))
+        {
+            questManager.itemCollected = null;
+            CompleteQuest();
+        }
+    }
 
     //Funcion que inicia el quest
     public void StartQuest()
     {
-        questManager = FindObjectOfType<QuestManager>();
+        questManager = FindObjectOfType<QuestManager>(); //El quest manager se recupera aqui, al iniciar el quest, en lugar de en el start porque si no no funciona
         questManager.ShowQuestText(startText); //Notifica al quest manager que muestre el texto de inicio del quest
     }
 
