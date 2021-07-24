@@ -353,6 +353,9 @@ MonoBehaviour:
     mundo!"
   needsItem: 1
   itemNeededName: AwakeningBell
+  needsEnemy: 0
+  enemyName: 
+  numberOfEnemiesNeeded: 0
 --- !u!1 &184487715
 GameObject:
   m_ObjectHideFlags: 0
@@ -808,7 +811,7 @@ PrefabInstance:
     - target: {fileID: 4181438623704750509, guid: 7e809f65cb323e046a80337be857120c,
         type: 3}
       propertyPath: m_RootOrder
-      value: 15
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 4181438623704750509, guid: 7e809f65cb323e046a80337be857120c,
         type: 3}
@@ -1049,6 +1052,7 @@ MonoBehaviour:
   - {fileID: 1266536715}
   questsCompleted: 
   itemCollected: 
+  enemyKilled: 
 --- !u!1 &612100974
 GameObject:
   m_ObjectHideFlags: 0
@@ -1095,7 +1099,7 @@ PrefabInstance:
     - target: {fileID: 6510085636370118925, guid: 1c3ef0c0346cb984f89bd25632ebb937,
         type: 3}
       propertyPath: m_RootOrder
-      value: 16
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 6510085636370118925, guid: 1c3ef0c0346cb984f89bd25632ebb937,
         type: 3}
@@ -26393,6 +26397,84 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 986043855}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &997076417
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 997076420}
+  - component: {fileID: 997076419}
+  - component: {fileID: 997076418}
+  m_Layer: 5
+  m_Name: Quest2Start
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &997076418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 997076417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf05b9fded779454cbe4e3940785c8e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  questID: 2
+  startPoint: 1
+  endPoint: 0
+--- !u!61 &997076419
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 997076417}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!224 &997076420
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 997076417}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 26.45, y: 6.38}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1047863675
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26734,6 +26816,9 @@ MonoBehaviour:
   completedText: Has llegado a casa de Ricardo.
   needsItem: 0
   itemNeededName: 
+  needsEnemy: 0
+  enemyName: 
+  numberOfEnemiesNeeded: 0
 --- !u!1 &1153778687
 GameObject:
   m_ObjectHideFlags: 0
@@ -28779,7 +28864,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1266536714
 RectTransform:
   m_ObjectHideFlags: 0
@@ -28812,10 +28897,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   questID: 2
-  startText: 
-  completedText: 
+  startText: Mata a 5 ojos rojos.
+  completedText: Has matado a 5 ojos rojos.
   needsItem: 0
   itemNeededName: 
+  needsEnemy: 1
+  enemyName: RedEye
+  numberOfEnemiesNeeded: 5
 --- !u!1 &1319721083
 GameObject:
   m_ObjectHideFlags: 0
@@ -29372,7 +29460,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!58 &1338972531
 CircleCollider2D:
@@ -32188,7 +32276,7 @@ PrefabInstance:
     - target: {fileID: 3667301855244476369, guid: 7dbb2e3421a636c449cfe0204414cdc8,
         type: 3}
       propertyPath: m_Name
-      value: Enemy
+      value: RedEye
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7dbb2e3421a636c449cfe0204414cdc8, type: 3}
@@ -32207,7 +32295,7 @@ PrefabInstance:
     - target: {fileID: 4181438623704750509, guid: 7e809f65cb323e046a80337be857120c,
         type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 4181438623704750509, guid: 7e809f65cb323e046a80337be857120c,
         type: 3}
@@ -32345,7 +32433,7 @@ PrefabInstance:
     - target: {fileID: 6510085636370118925, guid: 1c3ef0c0346cb984f89bd25632ebb937,
         type: 3}
       propertyPath: m_RootOrder
-      value: 14
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 6510085636370118925, guid: 1c3ef0c0346cb984f89bd25632ebb937,
         type: 3}

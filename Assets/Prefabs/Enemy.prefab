@@ -191,3 +191,4 @@ MonoBehaviour:
   flashActive: 0
   flashDuration: 0
   expToGive: 10
+  enemyName: RedEye

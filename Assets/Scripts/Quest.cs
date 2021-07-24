@@ -10,7 +10,12 @@ public class Quest : MonoBehaviour
     public string startText, completedText; //Textos a mostrar al iniciar y al completar el quest
 
     public bool needsItem; //Booleano con el que se indicara si el quest necesita un item para completarse
-    public string itemNeededName; //Nombre del item que se necita, debe ser igual al itemName en el script QuestItem
+    public string itemNeededName; //Nombre del item que se nesecita, debe ser igual al itemName en el script QuestItem
+
+    public bool needsEnemy;
+    public string enemyName;
+    public int numberOfEnemiesNeeded;
+    private int enemiesKilled;
 
     void Start()
     {
@@ -23,6 +28,17 @@ public class Quest : MonoBehaviour
         {
             questManager.itemCollected = null;
             CompleteQuest();
+        }
+
+        if (needsEnemy && questManager.enemyKilled.Equals(enemyName))
+        {
+            questManager.enemyKilled = null;
+            enemiesKilled++;
+
+            if (enemiesKilled >= numberOfEnemiesNeeded)
+            {
+                CompleteQuest();
+            }
         }
     }
 

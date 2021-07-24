@@ -7,7 +7,7 @@ public class QuestItem : MonoBehaviour
 {
     public int questID;
     private QuestManager questManager;
-    public string itemName;
+    public string itemName; //Nombre del item a asignar en itemCollected en el QuestManager
     
     void Start()
     {

@@ -15,16 +15,23 @@ public class HealthManager : MonoBehaviour
 
     private SpriteRenderer characterRenderer;
 
+    public string enemyName; //Nombre del enemigo a asignar a la variable enemiKilled en el QuestManager
+    private QuestManager questManager;
+
     void Start()
     {
         currentHealth = maxHealth; //La vida actual al instanciarse el personaje sera la vida maxima al inicio del juego
         characterRenderer = GetComponent<SpriteRenderer>();
+
+        questManager = FindObjectOfType<QuestManager>();
     }
     
     void Update()
     {
         if (currentHealth <= 0) //Si la vida actual llega a 0...
         {
+            questManager.enemyKilled = enemyName; //Asigna al quest manager el nombre del enemigo derrotado
+
             //Si este game object tiene la etiqueta enemigo, suma al player la experiencia que da el enemigo al ser derrotado
             if (gameObject.tag.Equals("Enemy"))
             {

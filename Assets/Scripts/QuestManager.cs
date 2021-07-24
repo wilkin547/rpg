@@ -9,7 +9,9 @@ public class QuestManager : MonoBehaviour
 
     private DialogManager dialogManager;
 
-    public string itemCollected; //Variable donde se guardara el nombre del item de la quest que lo requiera
+    public string itemCollected; //Variable donde se guardara el nombre del item recolectado de la quest que lo requiera, se indica desde el script QuestItem
+
+    public string enemyKilled; //Variable donde se guardara el nombre del enemigo derrotado de la quest que lo requiera, se indica desde el script HealthManager
 
     void Start()
     {
