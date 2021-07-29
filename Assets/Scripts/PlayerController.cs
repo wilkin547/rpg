@@ -29,6 +29,8 @@ public class PlayerController : MonoBehaviour
 
     public bool playerTalking; //Booleano para indicar si el player esta hablando o no
 
+    private Vector2 facingDirectionAtStart = new Vector2(0, -1);
+
     void Start()
     {
         animator = GetComponent<Animator>(); //Obtencion del animator del player
@@ -45,6 +47,8 @@ public class PlayerController : MonoBehaviour
         }
 
         playerTalking = false; //Al inicio del juego es false porque no esta hablando con nadie
+
+        lastMovement = facingDirectionAtStart;
     }
     
     void Update()
