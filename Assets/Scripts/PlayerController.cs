@@ -31,10 +31,13 @@ public class PlayerController : MonoBehaviour
 
     private Vector2 facingDirectionAtStart = new Vector2(0, -1);
 
+    private SFXManager sfxManager;
+
     void Start()
     {
         animator = GetComponent<Animator>(); //Obtencion del animator del player
         playerRigidBody = GetComponent<Rigidbody2D>();
+        sfxManager = FindObjectOfType<SFXManager>();
 
         if (playerCreated == false) //Si playerCreated es false...
         {
@@ -70,6 +73,7 @@ public class PlayerController : MonoBehaviour
             attackTimeCounter = attackTime; //attackTimeCounter valdra lo que se halla indicado en attackTime desde el editor
             playerRigidBody.velocity = Vector2.zero; //El player se detendra si se estaba moviendo
             animator.SetBool(attackingState, true); //Y se reproducira la animacion de ataque
+            sfxManager.playerAttack.Play();
         }
 
         if (attacking) //Si attacking es true...
