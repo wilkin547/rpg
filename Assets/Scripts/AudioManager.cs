@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//Este script esta en el game object AudioManager y tiene la funcion que se encarga de reproducir la pista de audio que se necesite segun la escena o zona, la cual es PlayNewTrack
+
 public class AudioManager : MonoBehaviour
 {
     public AudioSource[] audioTracks;

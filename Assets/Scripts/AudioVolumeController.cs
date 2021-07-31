@@ -15,7 +15,7 @@ public class AudioVolumeController : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
     }
 
-    //Funcion para setear el nuevo volumen de audio
+    //Funcion para setear el nuevo volumen de audio desde el AudioVolumeManager
     public void SetAudioVolume(float newVolume)
     {
         if (audioSource == null) //Si por alguna razon audioSource no cargo el componente AudioSource(porque la pista es muy pesada tal vez)
