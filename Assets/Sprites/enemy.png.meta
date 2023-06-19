@@ -63,7 +63,7 @@ TextureImporter:
       213: -7058638438382550567
     second: enemyBack_4
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -83,6 +83,8 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -92,8 +94,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -114,10 +116,14 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -157,6 +163,18 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -600,6 +618,27 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      enemyBack_0: -8918034418388536846
+      enemyRight_3: 5618028152753166986
+      enemyRight_2: 6484252870904682776
+      enemyFront_0: 297761703447499198
+      enemyLeft_0: 3678316895343943306
+      enemyBack_4: -7058638438382550567
+      enemyLeft_4: -6686358444854819152
+      enemyRight_0: 8966077861573107906
+      enemyRight_1: 5942247198578474322
+      enemyFront_1: 3680619090928529440
+      enemyBack_1: -4987121757160251396
+      enemyLeft_1: 5468275346343796690
+      enemyBack_2: -1325660692555949653
+      enemyFront_2: -6810697999950630716
+      enemyLeft_3: 4258081263921899527
+      enemyRight_4: -4944397764837749071
+      enemyFront_3: 1779747271024799556
+      enemyFront_4: 8411463563914695271
+      enemyLeft_2: 3810199616485272264
+      enemyBack_3: -991036465199342561
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
